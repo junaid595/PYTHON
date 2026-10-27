@@ -1,0 +1,197 @@
+import pandas as pd
+import numpy as np
+
+#step 1; read the excel file
+df = pd.read_excel(r"C:\Users\Admin\Downloads\Book.xlsx")
+print(df)
+
+      Name      Age      Marks      City
+
+0     Amit     18.0       85        Pune
+1     Neha     19.0       90       Mumbai
+2     Raj      NaN        78        Pune
+3    Amit      18.0       85        Pune
+4    Puja      21.0       79       Delhi
+5   Reshma     22.0       80       Mumbai
+6   Rishav     20.0       79      Baramati
+7   Anya       17.0       89      Hadapsar
+8   Gauri      16.0       98      Pimpri
+9   Manasi     15.0       96       Wapi
+10 Kajal       24.0       94       Div
+
+#step 2; display first five records
+print("first five records only")
+print(df.head())
+
+first five records only
+    Name      Age      Marks     City
+0   Amit      18.0      85      Pune
+1   Neha      19.0      90      Mumbai
+2   Raj       NaN       78      Pune
+3   Amit      18.0      85      Pune
+4   Puja      21.0      79      Delhi
+
+#step 3; display last five records
+Import pandas as pd
+Import numpy as np
+
+df = pd.read_excel(r"C:\Users\Admin\Downloads Book.xlsx")
+print("Display last five records")
+print(df.tail())
+
+Display last five records
+      Name      Age      Marks      City
+
+6    Rishav     20.0      79      Baramati
+7    Anya       17.0      89      Hadapsar
+8    Gauri      16.0      98      Pimpri
+9   Manasi      15.0      96       Wapi
+10 Kajal        24.0      94       Div
+
+#step 4; check for missing values
+import pandas as pd
+import numpy as np
+
+df = pd.read excel (r"C:\Users\Admin\Downloads\Book.xlsx")
+print("\nMissing values")
+print(df.isnull())
+print("display count of missing values")
+print (df.isnull().sum())
+
+Missing values
+      Name      Age      Marks      City
+0    False     False     False     False
+1    False     False     False     False
+2    False     True      False     False
+3    False     False     False     False
+4    False     False     False     False
+5    False     False     False     False
+6    False     False     False     False
+7    False     False     False     False
+8    False     False     False     False
+9    False     False     False     False
+10   False     False     False     False
+
+display count of missing values
+Name      0
+Age       1
+Marks     0
+City      0
+dtype:   int64
+
+Import pandas as pd
+x = pd.series("1,2,3,4")
+print(x)
+
+OUTPUT
+0      1,2,3,4
+dtype: object
+
+# retrieving shape; the shape of the cortes object defines cotul number of elements including winning empty values.
+Import numpy
+import pandas as pd
+
+a = pd.Series(data=[1,2,3,4])
+b = pd.Series(data=[4.9,8.2,5.6], index = ['x','y','z'))
+print(a.shape)
+print(b.shape)
+
+OUTPUT
+(4,)
+(3,)
+
+#nd = n directional, symetric or asymmetric
+#importing pandas Library
+import pandas as pd
+df = pd.DataFrame()
+print(df)
+
+OUTPUT
+Empty DataFrame
+Columns: []
+Index: []
+
+# coloumn selection
+import pandas pd
+info = {'one' : pd.Series([1,2,3,4,5,6], Index= ['a','b','c', 'd', 'e', 'f']),
+        'two' : pd.Series([1,2,3,4,5,6,7,8], index = ['a','b','c', 'd', 'e', 'f', 'g', 'h'])}
+d1 = pd.DataFrame(info)
+print(dl['one'])
+
+a     1.0
+b     2.0
+c     3.0
+d     4.0
+e     5.0
+f     6.0
+g     NaN
+h     NaN
+Name: one, dtype: float64
+
+#column addition
+import pandas as pd
+info = {'one':pd.Series ([1,2,3,4,5], index = ['a', 'b', 'c', 'd', 'e']),
+        'two': pd.Series([1,2,3,4,5,6], index = ['a','b', 'c', 'd', 'e', 'f'])}
+df = pd.DataFrame(info)
+
+#add a new column into an exisiting datafrume object
+print("add new column by passing series")
+df['three']= pd.Series([20,40,60], index = ['a','b', 'c'])
+print(df)
+print("add new column using existing DataFrame columns")
+df['four'] df['one'] + df['three']
+print(df)
+
+OUTPUT
+add new column by passing series
+    one    two    three
+a   1.0     1      20.0
+b   2.0     2      40.0
+c   3.0     3      60.0
+d   4.0     4      NaN
+e   5.0     5      NaN
+f   NaN     6      NaN
+
+add new column using existing DataFrame columns
+
+    one   two     three     four
+a   1.0    1       20.0     21.0
+b   2.0    2       40.0     42.0
+c   3.0    3       60.0     63.0
+d   4.0    4       NaN      NaN
+e   5.0    5       NaN      NaN
+f   NaN    6       NaN      NaN
+
+#column deltetion
+import pandas as pd
+info = ('one': pd.Series ([1,2], index = ['a','b']),
+        'two': pd.Series ([1,2,3], index = ['a','b','c'])}
+df = pd.DataFrame(info)
+print("the DataFrame:")
+print(df)
+
+#using delete function
+print("delete the first column:")
+del df['one']
+print(df)
+
+#using pop function
+print("delete the another column:")
+df.pop('two')
+print(df)
+
+OUTPUT
+the DataFrame:
+    one    two
+a   1.0     1
+b   2.0     2
+c   NaN     3
+delete the first column:
+    two
+a    1
+b    2
+c    3
+delete the another column:
+Empty DataFrame
+Columns: []
+Index: [a, b, c)
