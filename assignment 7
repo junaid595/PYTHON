@@ -1,0 +1,46 @@
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+#Load the csv dataset
+df = pd.read_csv(r"C:\Users\Admin\Documents\data.csv")
+print("Dataset :")
+print(df)
+
+#Line plot
+plt.figure(figsize=(7, 4.5))
+plt.plot(df["Student"], df["Python"], marker="o")
+plt.title("Python Marks of Students")
+plt.xlabel("Student")
+plt.ylabel("Python Marks")
+plt.grid(True)
+plt.show()
+
+#bar plot
+plt.figure(figsize=(7, 4.5))
+plt.bar(df["Student"], df["Maths"])
+plt.title("Maths Marks of Students")
+plt.xlabel("Student")
+plt.ylabel("Maths Marks")
+plt.show()
+
+#scatter plot
+plt.figure(figsize=(7, 4.5))
+plt.scatter(df["Maths"], df["Python"], s=70)
+plt.title("Maths vs Python Marks")
+plt.xlabel("Maths Marks")
+plt.ylabel("Python Marks")
+plt.grid(True)
+plt.show()
+
+#correlation matrix and heatmap
+
+OUTPUT
+Dataset:
+    Student    Maths    Python    Attendance    City
+0    Amit       75       80          85         Pune
+1   Bhavna      82       70          90        Mumbai
+2   Chetan      66       70          78        Pune
+3   Diya        90       92          95        Nashik
+4   Raha        72       75          80        Mumbai
+5   Farhan      95       86          92        Pune
